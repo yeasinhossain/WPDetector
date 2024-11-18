@@ -258,7 +258,7 @@ if (isset($_SESSION['wp_result'])) {
     <div class="container mx-auto px-4 py-8 max-w-6xl">
         <!-- Header Section -->
         <div class="text-center mb-10">
-            <a href="/" class="inline-block transform hover:scale-105 transition-transform duration-300" title="WordPress Theme & Plugin Detector">
+            <a href="https://yeasin.me/wordpress-theme-plugin-detector/" class="inline-block transform hover:scale-105 transition-transform duration-300" title="WordPress Theme & Plugin Detector">
                 <i class="fab fa-wordpress text-primary text-7xl mb-2 animate-pulse"></i>
             </a>
             
