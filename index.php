@@ -232,13 +232,13 @@ if (isset($_SESSION['wp_result'])) {
                         <a href="https://yeasin.me/wordpress-theme-plugin-detector/" class="block py-2 px-3 text-primary bg-transparent rounded md:p-0" aria-current="page">Detector</a>
                     </li>
                     <li>
-                        <a href="https://yeasin.me/wordpress-theme-plugin-detector/top-wordpress-themes/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Top Themes</a>
+                        <a href="https://yeasin.me/top-wordpress-themes/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Top Themes</a>
                     </li>
                     <li>
-                        <a href="https://yeasin.me/wordpress-theme-plugin-detector/top-wordpress-plugins/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Top Plugins</a>
+                        <a href="https://yeasin.me/top-wordpress-plugins/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Top Plugins</a>
                     </li>
                     <li>
-                        <a href="https://yeasin.me/wordpress-theme-plugin-detector/top-wordpress-developers/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Top Providers</a>
+                        <a href="https://yeasin.me/top-wordpress-developers/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Top Providers</a>
                     </li>
                 </ul>
             </div>
