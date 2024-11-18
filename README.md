@@ -132,9 +132,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔄 Updates
 
-- **v1.0.0** (2024)
+- **v1.0.1** (2024)
   - Initial release
   - Core functionality implementation
   - Security features
   - Responsive design
   - User-friendly interface
+  - Real-time validation
+  - Performance optimization
+  - Bug fixes
