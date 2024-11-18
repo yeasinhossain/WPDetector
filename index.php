@@ -77,8 +77,9 @@ if (isset($_SESSION['wp_result'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
     <!-- Structured Data (JSON-LD) -->
@@ -231,13 +232,13 @@ if (isset($_SESSION['wp_result'])) {
                         <a href="https://yeasin.me/wordpress-theme-plugin-detector/" class="block py-2 px-3 text-primary bg-transparent rounded md:p-0" aria-current="page">Detector</a>
                     </li>
                     <li>
-                        <a href="https://yeasin.me/wordpress-theme-plugin-detector/top-themes/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Top Themes</a>
+                        <a href="https://yeasin.me/wordpress-theme-plugin-detector/top-wordpress-themes/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Top Themes</a>
                     </li>
                     <li>
-                        <a href="https://yeasin.me/wordpress-theme-plugin-detector/top-plugins/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Top Plugins</a>
+                        <a href="https://yeasin.me/wordpress-theme-plugin-detector/top-wordpress-plugins/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Top Plugins</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Top Providers</a>
+                        <a href="https://yeasin.me/wordpress-theme-plugin-detector/top-wordpress-developers/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Top Providers</a>
                     </li>
                 </ul>
             </div>
@@ -306,68 +307,23 @@ if (isset($_SESSION['wp_result'])) {
         <!-- Main Form -->
         <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
             <form id="analyzeForm" method="post" class="flex flex-col md:flex-row items-center justify-center gap-4 py-6" onsubmit="return handleSubmit(this);">
-            <div class="flex-grow w-full md:max-w-3xl relative">
-                <i class="fas fa-link absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                <input type="text" 
-                    name="url" 
-                    id="siteUrl"
-                    placeholder="Enter website URL..." 
-                    class="w-full px-6 py-4 pl-12 border-2 border-gray-200 rounded-xl text-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 hover:border-primary"
-                    required
-                    value="<?php echo htmlspecialchars($input_url); ?>">
-            </div>
+                <div class="flex-grow w-full md:max-w-3xl relative">
+                    <i class="fas fa-link absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    <input type="text" 
+                        name="url" 
+                        id="siteUrl"
+                        placeholder="Enter website URL..." 
+                        class="w-full px-6 py-4 pl-12 border-2 border-gray-200 rounded-xl text-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 hover:border-primary"
+                        required
+                        value="<?php echo htmlspecialchars($input_url); ?>">
+                </div>
                 <button type="submit" 
                         class="w-full md:w-auto bg-primary text-white px-8 py-4 rounded-xl hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-2 whitespace-nowrap flex items-center justify-center text-lg font-semibold transition-all duration-200 hover:shadow-lg">
                     <i class="fas fa-search mr-3 text-xl"></i>
                     Analyze Website
                 </button>
             </form>
-<script>
-    // Get the input element
-    const urlInput = document.getElementById('siteUrl');
-    
-    // URL validation function with TLD check
-    function isValidUrl(url) {
-        // Regular expression to validate URL with optional protocol and www
-        const urlPattern = /^(https?:\/\/)?(www\.)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[a-zA-Z0-9-._~:/?#[\]@!$&'()*+,;=]*)?$/;
-        return urlPattern.test(url);
-    }
 
-    // Add input event listener for real-time validation
-    urlInput.addEventListener('input', function() {
-        const value = this.value.trim();
-        
-        if (value && !isValidUrl(value)) {
-            this.setCustomValidity('Please enter a valid website URL (e.g., example.com or www.example.com)');
-            this.classList.add('border-red-500');
-            this.classList.remove('border-gray-200', 'hover:border-primary');
-        } else {
-            this.setCustomValidity('');
-            this.classList.remove('border-red-500');
-            this.classList.add('border-gray-200', 'hover:border-primary');
-        }
-    });
-
-    // Form submit validation
-    function handleSubmit(form) {
-        const input = form.querySelector('#siteUrl');
-        const value = input.value.trim();
-        
-        if (!value) {
-            input.setCustomValidity('Please enter a website URL');
-            input.reportValidity();
-            return false;
-        }
-        
-        if (!isValidUrl(value)) {
-            input.setCustomValidity('Please enter a valid website URL (e.g., example.com or www.example.com)');
-            input.reportValidity();
-            return false;
-        }
-        
-        return true;
-    }
-</script>
             <?php if (!isset($result)): ?>
             <div class="flex items-center justify-center mt-4 gap-3 text-gray-600">
                 <i class="fas fa-lightbulb text-primary text-xl"></i>
@@ -1566,26 +1522,72 @@ if (isset($_SESSION['wp_result'])) {
 </button>
 
 <script>
-    // Go to Top Button functionality
-    const goToTopButton = document.getElementById('goToTop');
+    // Get the input element
+    const urlInput = document.getElementById('siteUrl');
     
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            goToTopButton.classList.remove('opacity-0', 'invisible');
-            goToTopButton.classList.add('opacity-100');
+    // URL validation function with TLD check
+    function isValidUrl(url) {
+        // Regular expression to validate URL with optional protocol and www
+        const urlPattern = /^(https?:\/\/)?(www\.)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[a-zA-Z0-9-._~:/?#[\]@!$&'()*+,;=]*)?$/;
+        return urlPattern.test(url);
+    }
+
+    // Add input event listener for real-time validation
+    urlInput.addEventListener('input', function() {
+        const value = this.value.trim();
+        
+        if (value && !isValidUrl(value)) {
+            this.setCustomValidity('Please enter a valid website URL');
+            this.classList.add('border-red-500');
+            this.classList.remove('border-gray-200', 'hover:border-primary');
         } else {
-            goToTopButton.classList.add('opacity-0', 'invisible');
-            goToTopButton.classList.remove('opacity-100');
+            this.setCustomValidity('');
+            this.classList.remove('border-red-500');
+            this.classList.add('border-gray-200', 'hover:border-primary');
         }
     });
 
-    goToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
+    // Form submit validation
+    function handleSubmit(form) {
+        const input = form.querySelector('#siteUrl');
+        const value = input.value.trim();
+        
+        if (!value) {
+            input.setCustomValidity('Please enter a website URL');
+            input.reportValidity();
+            return false;
+        }
+        
+        if (!isValidUrl(value)) {
+            input.setCustomValidity('Please enter a valid website URL');
+            input.reportValidity();
+            return false;
+        }
+        
+        return true;
+    }
 </script>
+    <script>
+        // Go to Top Button functionality
+        const goToTopButton = document.getElementById('goToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                goToTopButton.classList.remove('opacity-0', 'invisible');
+                goToTopButton.classList.add('opacity-100');
+            } else {
+                goToTopButton.classList.add('opacity-0', 'invisible');
+                goToTopButton.classList.remove('opacity-100');
+            }
+        });
+
+        goToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
     <script>
     document.getElementById('analyzeForm').addEventListener('submit', function() {
         document.getElementById('loadingOverlay').style.display = 'flex';
